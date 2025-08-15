@@ -18,10 +18,6 @@ function findPrimes(limit) {
     return primes;
 }
 
-function displayPrimes(primes, limit) {
-    alert(`For n = ${limit} prime numbers are ${primes.join(",")}`);
-}
-
 window.onload = function() {
     let n;
     while (true) {
@@ -32,5 +28,6 @@ window.onload = function() {
         }
     }
     const primes = findPrimes(n);
-    displayPrimes(primes, n);
+    alert(`For n = ${n} prime numbers are ${primes.join(",")}`);
+    document.body.style.display = "block"; 
 };
