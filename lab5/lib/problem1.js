@@ -22,6 +22,9 @@ window.onload = function() {
     let n;
     while (true) {
         n = prompt("Enter a positive integer");
+        if (n === null) {  
+            return;        
+        }
         if (validateInput(n)) {
             n = parseInt(n, 10);
             break;
@@ -29,5 +32,5 @@ window.onload = function() {
     }
     const primes = findPrimes(n);
     alert(`For n = ${n} prime numbers are ${primes.join(",")}`);
-    document.body.style.display = "block"; 
+    document.body.style.display = "block";
 };
