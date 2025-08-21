@@ -2,17 +2,16 @@ function readInput() {
   let numbers = [];
   while (true) {
     let input = prompt("Enter an integer (a negative integer to quit):");
-    if (input === null) continue; 
+    if (input === null) continue;
 
     let num = parseInt(input, 10);
 
     if (isNaN(num)) {
-      alert("Invalid input. Please enter an integer.");
       continue;
     }
 
     if (num < 0) {
-      break; 
+      break;
     } else {
       numbers.push(num);
     }
@@ -21,13 +20,19 @@ function readInput() {
 }
 
 function displayStats(list) {
-  let avg = (list.length > 0) 
-              ? (list.reduce((a, b) => a + b, 0) / list.length).toFixed(2) 
-              : 0;
-  let min = (list.length > 0) ? Math.min(...list) : 0;
-  let max = (list.length > 0) ? Math.max(...list) : 0;
+  if (list.length === 0) {
+    alert("For the list that is empty, the average is 0, the minimum is 0, and the maximum is 0");
+    document.body.style.display = "block";
+    return;
+  }
 
-  alert(`For the list ${list.join(",")}, the average is ${avg}, the minimum is ${min}, and the maximum is ${max}`);
+  let sortedList = list.slice().sort((a, b) => a - b);
+
+  let avg = (list.reduce((a, b) => a + b, 0) / list.length).toFixed(2);
+  let min = Math.min(...list);
+  let max = Math.max(...list);
+
+  alert(`For the list ${sortedList.join(",")}, the average is ${avg}, the minimum is ${min}, and the maximum is ${max}`);
 
   document.body.style.display = "block";
 }
