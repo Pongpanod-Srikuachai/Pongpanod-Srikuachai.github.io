@@ -1,24 +1,24 @@
-body {
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 10px;
-    line-height: 1.6;
-}
-
 h1 {
     text-align: center;
 }
 
-ul, ol {
-    margin-left: 20px;
-    font-size: 15px;
-}
 p{
-    font-size: 18px;
-    text-align: left;
+    font-size: 3rem;
 }
-@media (max-width: 600px) {
-    body { font-size: 14px; padding: 5px; }
-    h1 { font-size: 20px; }
+
+li{
+    font-size: 2rem;
+}
+
+@media (max-width: 767px) {
+    h1{
+        text-align: left;
+        font-size: 1.5rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    li{
+        font-size: 1rem;
+    }
 }
